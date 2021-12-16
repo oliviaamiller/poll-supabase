@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <title>Poll Tracker</title>
 </head>
@@ -16,6 +16,33 @@
 <body>
 
     <main>
+        <section class="left">
+            <div id="poll-form">
+                <form>
+                    <label>question</label>
+                    <input name="question"/>
+
+                    <label>option a</label>
+                    <input name="option-a"/>
+
+                    <label>option b</label>
+                    <input name="option-b"/>
+
+                    <button>enter</button>
+                </form>
+            </div>
+
+            <div id="current-poll">
+
+            </div>
+
+        </section>
+
+        <section class="right">
+            <div id="past-polls-container">
+
+            </div>
+        </section>
        
     </main>
 
