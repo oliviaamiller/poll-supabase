@@ -21,14 +21,23 @@ export async function getPolls() {
         .from('polls')
         .select();
 
-    console.log(response.data);
+    
     return response.data;
 }
 
-export async function createPoll(...poll) {
+export async function createPoll(question, optionA, optionB, aVotes, bVotes) {
     const response = await client
         .from('polls')
-        .insert([poll]);
+        .insert([
+            {
+                question: question, 
+                optionA: optionA, 
+                optionB: optionB,
+                aVotes: aVotes,
+                bVotes: bVotes
+            }
+        ]);
 
+    console.log(response.data);
     return response.data;
 }

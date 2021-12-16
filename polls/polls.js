@@ -5,6 +5,8 @@ const newPollFormEl = document.querySelector('form');
 const currentPollEl = document.querySelector('#current-poll');
 const questionEl = document.querySelector('#question');
 const optionAEl = document.querySelector('#option-a');
+const aVotesEl = document.querySelector('#a-votes');
+const bVotesEl = document.querySelector('#b-votes');
 const aAddButtonEl = document.querySelector('#a-add');
 const aUndoButtonEl = document.querySelector('#a-undo');
 const optionBEl = document.querySelector('#option-b');
@@ -12,6 +14,7 @@ const bAddButtonEl = document.querySelector('#b-add');
 const bUndoButtonEl = document.querySelector('#b-undo');
 const closePollButtonEl = document.querySelector('#close-button');
 const closedPollsEl = document.querySelector('#closed-polls');
+const logoutButtonEl = document.querySelector('#logout-button');
 
 
 let question = '';
@@ -34,7 +37,9 @@ newPollFormEl.addEventListener('submit', (e) => {
     displayCurrentPollEl();
 });
 
-
+logoutButtonEl.addEventListener('click', () => {
+    window.location.href = '../';
+});
 aAddButtonEl.addEventListener('click', () => {
     aVotes++;
     displayCurrentPollEl();
@@ -56,15 +61,11 @@ bUndoButtonEl.addEventListener('click', () => {
 });
 
 closePollButtonEl.addEventListener('click', async() => {
-    await createPoll(poll = {
-        optionA,
-        optionB,
-        aVotes,
-        bVotes
-    });
+    await createPoll(question, optionA, optionB, aVotes, bVotes);
 
     displayAllPolls();
 
+    question = '';
     optionA = '';
     optionB = '';
     aVotes = 0;
@@ -89,6 +90,9 @@ function displayCurrentPollEl() {
     questionEl.textContent = question;
     optionAEl.textContent = optionA;
     optionBEl.textContent = optionB;
+    aVotesEl.textContent = aVotes;
+    bVotesEl.textContent = bVotes;
+
 
     const gameEl = renderPoll(poll);
 
