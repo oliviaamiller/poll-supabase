@@ -34,7 +34,8 @@ export async function createPoll(question, optionA, optionB, aVotes, bVotes) {
                 optionA: optionA, 
                 optionB: optionB,
                 aVotes: aVotes,
-                bVotes: bVotes
+                bVotes: bVotes,
+                user_id: client.auth.user().id
             }
         ]);
 

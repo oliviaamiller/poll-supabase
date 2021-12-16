@@ -40,6 +40,7 @@ newPollFormEl.addEventListener('submit', (e) => {
 logoutButtonEl.addEventListener('click', () => {
     window.location.href = '../';
 });
+
 aAddButtonEl.addEventListener('click', () => {
     aVotes++;
     displayCurrentPollEl();
