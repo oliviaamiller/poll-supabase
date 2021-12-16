@@ -1,13 +1,9 @@
 // import functions and grab DOM elements
-import { signInUser, signUpUser, redirectToPolls } from './fetch-utils.js';
+import { signInUser, signUpUser } from './fetch-utils.js';
 
 const signInFormEl = document.querySelector('#sign-in-form');
-const signInEmailEl = document.querySelector('#sign-in-email');
-const signInPasswordEl = document.querySelector('#sign-in-password');
-
 const signUpFormEl = document.querySelector('#sign-up-form');
-const signUpEmailEl = document.querySelector('#sign-up-email');
-const signUpPasswordEl = document.querySelector('#sign-up-password');
+
 
 
 // let state
@@ -16,30 +12,32 @@ const signUpPasswordEl = document.querySelector('#sign-up-password');
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
-  
+
 
 signInFormEl.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-    const user = await signInUser(signInEmailEl.value, signInPasswordEl.value);
+    const data = new FormData(signInFormEl);
 
-    if (user) {
-        redirectToPolls();
-    } else {
-        console.error(user);
-    }
+    const email = data.get('email-sign-in');
+    const password = data.get('password-sign-up');
+
+    await signInUser(email, password);
+
+    window.location.href = './polls';
 
 });
 
 signUpFormEl.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-    const user = await signUpUser(signUpEmailEl.value, signUpPasswordEl.value);
+    const data = new FormData(signUpFormEl);
 
-    if (user) {
-        redirectToPolls();
-    } else {
-        console.error(user);
-    }
+    const email = data.get('email-sign-up');
+    const password = data.get('password-sign-up');
 
+    await signUpUser(email, password);
+
+    window.location.href = './polls';
 });
+

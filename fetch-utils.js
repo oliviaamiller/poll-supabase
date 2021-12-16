@@ -15,13 +15,3 @@ export async function signInUser(email, password) {
 
     return response.user;
 }
-
-export async function getUser() {
-    return client.auth.session();
-}
-
-export async function redirectToPolls() {
-    if (await getUser()) {
-        location.replace('./polls');
-    }
-}
