@@ -15,3 +15,12 @@ export async function signInUser(email, password) {
 
     return response.user;
 }
+
+export async function getPolls() {
+    const response = await client
+        .from('polls')
+        .select();
+        
+    console.log(response.data);
+    return response.data;
+}

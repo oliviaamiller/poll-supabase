@@ -56,3 +56,16 @@ function displayCurrentPollEl() {
 
     currentPollEl.append(gameEl);
 }
+
+async function displayAllPolls() {
+
+    closedPollsEl.textContent = '';
+
+    const polls = await getPolls();
+
+    for (let poll of polls) {
+        const lastPoll = renderPoll(poll);
+
+        closedPollsEl.append(lastPoll);
+    }
+}
