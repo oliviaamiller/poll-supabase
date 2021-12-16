@@ -1,7 +1,9 @@
 import { renderPoll } from '../render-utils.js';
+import { getPolls, createPoll } from '../fetch-utils.js';
 
 const newPollFormEl = document.querySelector('form');
 const currentPollEl = document.querySelector('#current-poll');
+const questionEl = document.querySelector('#question');
 const optionAEl = document.querySelector('#option-a');
 const aAddButtonEl = document.querySelector('#a-add');
 const aUndoButtonEl = document.querySelector('#a-undo');
@@ -11,11 +13,26 @@ const bUndoButtonEl = document.querySelector('#b-undo');
 const closePollButtonEl = document.querySelector('#close-button');
 const closedPollsEl = document.querySelector('#closed-polls');
 
+
 let question = '';
 let optionA = '';
 let optionB = '';
 let aVotes = 0;
 let bVotes = 0;
+
+newPollFormEl.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(newPollFormEl);
+
+    question = data.get('question');
+    optionA = data.get('option-a');
+    optionB = data.get('option-b');
+
+    newPollFormEl.reset();
+
+    displayCurrentPollEl();
+});
 
 
 aAddButtonEl.addEventListener('click', () => {
@@ -38,6 +55,25 @@ bUndoButtonEl.addEventListener('click', () => {
     displayCurrentPollEl();
 });
 
+closePollButtonEl.addEventListener('click', async() => {
+    await createPoll(poll = {
+        optionA,
+        optionB,
+        aVotes,
+        bVotes
+    });
+
+    displayAllPolls();
+
+    optionA = '';
+    optionB = '';
+    aVotes = 0;
+    bVotes = 0;
+
+    displayCurrentPollEl();
+
+});
+
 
 function displayCurrentPollEl() {
     const poll = {
@@ -49,6 +85,8 @@ function displayCurrentPollEl() {
     };
 
     currentPollEl.textContent = '';
+
+    questionEl.textContent = question;
     optionAEl.textContent = optionA;
     optionBEl.textContent = optionB;
 

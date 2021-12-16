@@ -20,7 +20,15 @@ export async function getPolls() {
     const response = await client
         .from('polls')
         .select();
-        
+
     console.log(response.data);
+    return response.data;
+}
+
+export async function createPoll(...poll) {
+    const response = await client
+        .from('polls')
+        .insert([poll]);
+
     return response.data;
 }
