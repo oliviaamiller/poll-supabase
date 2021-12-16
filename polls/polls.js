@@ -1,6 +1,7 @@
-
+import { renderPoll } from '../render-utils.js';
 
 const newPollFormEl = document.querySelector('form');
+const currentPollEl = document.querySelector('#current-poll');
 const optionAEl = document.querySelector('#option-a');
 const aAddButtonEl = document.querySelector('#a-add');
 const aUndoButtonEl = document.querySelector('#a-undo');
@@ -36,3 +37,22 @@ bUndoButtonEl.addEventListener('click', () => {
     bVotes--;
     displayCurrentPollEl();
 });
+
+
+function displayCurrentPollEl() {
+    const poll = {
+        question,
+        optionA, 
+        optionB, 
+        aVotes,
+        bVotes
+    };
+
+    currentPollEl.textContent = '';
+    optionAEl.textContent = optionA;
+    optionBEl.textContent = optionB;
+
+    const gameEl = renderPoll(poll);
+
+    currentPollEl.append(gameEl);
+}
