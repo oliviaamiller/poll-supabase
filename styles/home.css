@@ -1,1 +1,63 @@
-/* add home page styles here */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 100px;
+
+}
+
+.container h3 {
+    color: red;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.sign-in, .sign-up {
+    color: blue;
+    border: blue 1.5px solid;
+    margin: 10px;
+    padding: 10px 20px 30px 20px;
+}
+
+.sign-in button, .sign-up button{
+    color: blue;
+    border: blue 1px solid; 
+    text-transform: uppercase;
+    font-family: sans-serif;
+    background-color: white;
+    padding: 5px;
+}
+
+.sign-in p, .sign-up p {
+    color: blue;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.sign-in label, .sign-up label {
+    color: blue;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+.sign-in input, .sign-up input {
+    color: blue;
+    border: blue 1px solid;
+    padding: 5px;
+    margin-right: 10px;
+}

@@ -23,6 +23,7 @@ let optionB = '';
 let aVotes = 0;
 let bVotes = 0;
 
+
 newPollFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -113,3 +114,6 @@ async function displayAllPolls() {
         closedPollsEl.append(lastPoll);
     }
 }
+
+displayCurrentPollEl();
+displayAllPolls();

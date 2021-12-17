@@ -34,6 +34,32 @@ html, body {
     width: 50%;
     padding: 20px;
     margin: 20px;
+    overflow: hidden;
+}
+
+.right:hover {
+    overflow: auto;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.content::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.wrapper {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper > div {
+    height: 100%;
 }
 
 .right h2 {

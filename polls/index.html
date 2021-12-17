@@ -6,74 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/polls.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <title>Poll Tracker</title>
 </head>
 
 <body>
     <main>
-        <span class="container">
-            <div class="left">
-                <h2>current poll</h2>
-                
-                <div id="current-poll">
-                </div>
-                
-                <div class="buttons">
-                    <div>
-                         <div>
-                             <h3 id="question">question</h3>
-                            <h3 id="option-a">option a</h3>
-                            <h3 id="a-votes">0</h3>
-                             <button id="a-add">add</button>
-                             <button id="a-undo">undo</button>
+        <div class="content">
+            <div class="wrapper">
+                <span class="container">
+                    <div class="left">
+                        <h2>current poll</h2>
+                        
+                        <div id="current-poll">
                         </div>
-                        <div class="right-buttons">
-                            <h3 id="option-b">option b</h3>
-                            <h3 id="b-votes">0</h3>
-                            <button id="b-add">add</button> 
-                                <button id="b-undo">undo</button>    
+                        
+                        <div class="buttons">
+                            <div>
+                                 <div>
+                                     <h3 id="question">question</h3>
+                                    <h3 id="option-a">option a</h3>
+                                    <h3 id="a-votes">0</h3>
+                                     <button id="a-add">add</button>
+                                     <button id="a-undo">undo</button>
+                                </div>
+                                <div class="right-buttons">
+                                    <h3 id="option-b">option b</h3>
+                                    <h3 id="b-votes">0</h3>
+                                    <button id="b-add">add</button> 
+                                        <button id="b-undo">undo</button>    
+                                </div>
+                            </div>
+                            <div>
+                                <button id="close-button">close poll</button>    
+                            </div>
+                        </div>
+            
+                        <div class="form">
+                            <form> 
+                                <label>
+                                    question:
+                                    <input name="question"/>
+                                </label>
+                                <label>
+                                    option a:
+                                    <input name="option-a"/>
+                                </label>   
+                                <label>
+                                    option b:
+                                    <input name="option-b"/>
+                                    <button class="submit-button">submit</button>
+                                </label>
+                            </form>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="right">
+                        <div>
+                            <h2>closed polls</h2>
+                        </div>
+                        <div id="closed-polls">
                         </div>
                     </div>
-                    <div>
-                        <button id="close-button">close poll</button>    
-                    </div>
-                </div>
-    
-                <div class="form">
-                    <form> 
-                        <label>
-                            question:
-                            <input name="question"/>
-                        </label>
-                        <label>
-                            option a:
-                            <input name="option-a"/>
-                        </label>   
-                        <label>
-                            option b:
-                            <input name="option-b"/>
-                            <button class="submit-button">submit</button>
-                        </label>
-                    </form>
-                </div>
-                
-                
+                </span>
+                <footer>
+                    <button id="logout-button">logout</button>
+                </footer>
             </div>
-            <div class="right">
-                <div>
-                    <h2>closed polls</h2>
-                </div>
-                <div id="closed-polls">
-                </div>
-            </div>
-        </span>
-        <footer>
-            <button id="logout-button">logout</button>
-        </footer>
+        </div>
+        
     </main>
 
     
