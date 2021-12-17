@@ -96,9 +96,9 @@ function displayCurrentPollEl() {
     };
 
 
-    const newPoll = renderPoll(poll);
+    // const newPoll = renderPoll(poll);
 
-    currentPollEl.append(newPoll);
+    // currentPollEl.append(newPoll);
 }
 
 async function displayAllPolls() {
