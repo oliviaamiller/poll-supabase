@@ -15,53 +15,57 @@
     <main>
     
         <span class="container">
-            <div class="left">
-                <h2>current poll</h2>
-                        
-                <div id="current-poll">
+            <div class="poll-and-button">
+                <div class="left">
+                    <h2>current poll</h2>
+                            
+                    <div id="current-poll">
+                     </div>
+    
+                     <div class="current-container">
+                        <div class="buttons">
+                            <div class="top-buttons">
+                                <h3 id="question">question</h3>
+                                <h3 id="option-a">option a</h3>
+                                <h3 id="a-votes">0</h3>
+                                <button id="a-add">add</button>
+                                <button id="a-undo">undo</button>  
+                            </div>
+    
+                            <div class="bottom-buttons">
+                                <h3 id="option-b">option b</h3>
+                                <h3 id="b-votes">0</h3>
+                                <button id="b-add">add</button> 
+                                <button id="b-undo">undo</button>
+                            </div>
+                            <div class="close-button">
+                                <button id="close-button">close poll</button> 
+                            </div>
+                        </div>
+    
+                        <div class="form">
+                            <form> 
+                                <label>
+                                    question:
+                                    <input name="question"/>
+                                </label>
+                                <label>
+                                    option a:
+                                    <input name="option-a"/>
+                                </label>   
+                                <label>
+                                    option b:
+                                    <input name="option-b"/>
+                                    <button class="submit-button">submit</button>
+                                </label>
+                            </form>
+                        </div>
+                     </div>            
+                </div>
+                <div class="logout">
+                    <button id="logout-button">logout</button>
                  </div>
 
-                 <div class="current-container">
-                    <div class="buttons">
-                        <div class="top-buttons">
-                            <h3 id="question">question</h3>
-                            <h3 id="option-a">option a</h3>
-                            <h3 id="a-votes">0</h3>
-                            <button id="a-add">add</button>
-                            <button id="a-undo">undo</button>  
-                        </div>
-
-                        <div class="bottom-buttons">
-                            <h3 id="option-b">option b</h3>
-                            <h3 id="b-votes">0</h3>
-                            <button id="b-add">add</button> 
-                            <button id="b-undo">undo</button>
-                        </div>
-                        <div class="close-button">
-                            <button id="close-button">close poll</button> 
-                        </div>
-                    </div>
-                    
-                    <div class="form">
-                        <form> 
-                            <label>
-                                question:
-                                <input name="question"/>
-                            </label>
-                            <label>
-                                option a:
-                                <input name="option-a"/>
-                            </label>   
-                            <label>
-                                option b:
-                                <input name="option-b"/>
-                                <button class="submit-button">submit</button>
-                            </label>
-                        </form>
-                    </div>
-            
-                 </div>
-                        
             </div>     
                    
             <div class="right">
@@ -72,12 +76,6 @@
                 </div>
             </div>
         </span>
-        <footer>
-            <button id="logout-button">logout</button>
-        </footer>
-            
-       
-        
     </main>
 
     
