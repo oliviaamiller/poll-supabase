@@ -18,8 +18,8 @@ html, body {
 
 .left {
     border: blue 1px solid;
-    width: 45%;
-    height: 50%;
+    width: 47%;
+    height: 60%;
     padding: 20px;
     margin: 20px;
     position: fixed;
@@ -38,10 +38,9 @@ html, body {
 
 .right {
     border: red 1px solid;
-    width: 50%;
+    width: 47%;
     padding: 20px;
     margin: 20px;
-
 }
 
 
@@ -77,6 +76,7 @@ html, body {
     padding-right: 20px;
     width: 100px;
     margin: 10px;
+    overflow-y: scroll;
 }
 
 .current-container {
@@ -146,5 +146,6 @@ html, body {
 
 footer {
     margin-left: 20px;
+
 }
 
