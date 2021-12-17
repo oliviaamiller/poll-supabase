@@ -87,13 +87,13 @@ function displayCurrentPollEl() {
     aVotesEl.textContent = aVotes;
     bVotesEl.textContent = bVotes;
 
-    const poll = {
-        question,
-        optionA, 
-        optionB, 
-        aVotes,
-        bVotes
-    };
+    // const poll = {
+    //     question,
+    //     optionA, 
+    //     optionB, 
+    //     aVotes,
+    //     bVotes
+    // };
 
 
     // const newPoll = renderPoll(poll);
