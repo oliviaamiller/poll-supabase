@@ -11,16 +11,20 @@ html, body {
 
 .container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-end;
 }
 
 .left {
     border: blue 1px solid;
-    width: 50%;
-    height: 100%;
+    width: 45%;
+    height: 50%;
     padding: 20px;
     margin: 20px;
+    position: fixed;
+    left: 0;
+
 }
 
 .left h2 {
@@ -37,6 +41,7 @@ html, body {
     width: 50%;
     padding: 20px;
     margin: 20px;
+
 }
 
 
@@ -53,6 +58,7 @@ html, body {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-y: scroll;
 
 }
 
@@ -89,6 +95,7 @@ html, body {
     color: blue;
     text-transform: uppercase;
     font-family: sans-serif;
+    font-weight: normal;
 }
 
 
@@ -136,3 +143,8 @@ html, body {
     background-color: white;
     padding: 5px;
 }
+
+footer {
+    margin-left: 20px;
+}
+
