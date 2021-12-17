@@ -13,6 +13,8 @@ export async function signUpUser(email, password) {
 export async function signInUser(email, password) {
     const response = await client.auth.signIn({ email, password });
 
+    console.log(client.auth.user(), 'after');
+
     return response.user;
 }
 

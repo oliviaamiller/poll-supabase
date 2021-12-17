@@ -7,6 +7,11 @@ export function renderPoll(poll) {
 
     div.classList.add('poll');
 
+    optionA.textContent = poll.optionA;
+    optionB.textContent = poll.optionB;
+    aVotes.textContent = poll.aVotes;
+    bVotes.textContent = poll.bVotes;
+
     div.append(optionA, aVotes, optionB, bVotes);
 
     return div;

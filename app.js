@@ -20,11 +20,15 @@ signInFormEl.addEventListener('submit', async(e) => {
     const data = new FormData(signInFormEl);
 
     const email = data.get('email-sign-in');
-    const password = data.get('password-sign-up');
+    const password = data.get('password-sign-in');
 
-    await signInUser(email, password);
+    const user = await signInUser(email, password);
 
-    window.location.href = './polls';
+    if (!user) {
+        window.location.href = './';
+    } else { window.location.href = './polls'; }
+
+    console.log(user);
 
 });
 
@@ -36,8 +40,11 @@ signUpFormEl.addEventListener('submit', async(e) => {
     const email = data.get('email-sign-up');
     const password = data.get('password-sign-up');
 
-    await signUpUser(email, password);
+    const user = await signUpUser(email, password);
 
-    window.location.href = './polls';
+    if (!user) {
+        window.location.href = './';
+    } else { window.location.href = './polls'; }
+
 });
 
