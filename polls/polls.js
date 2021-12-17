@@ -78,14 +78,6 @@ closePollButtonEl.addEventListener('click', async() => {
 
 
 function displayCurrentPollEl() {
-    const poll = {
-        question,
-        optionA, 
-        optionB, 
-        aVotes,
-        bVotes
-    };
-
     currentPollEl.textContent = '';
 
     questionEl.textContent = question;
@@ -94,10 +86,18 @@ function displayCurrentPollEl() {
     aVotesEl.textContent = aVotes;
     bVotesEl.textContent = bVotes;
 
+    const poll = {
+        question,
+        optionA, 
+        optionB, 
+        aVotes,
+        bVotes
+    };
 
-    const gameEl = renderPoll(poll);
 
-    currentPollEl.append(gameEl);
+    const newPoll = renderPoll(poll);
+
+    currentPollEl.append(newPoll);
 }
 
 async function displayAllPolls() {
@@ -106,8 +106,9 @@ async function displayAllPolls() {
 
     const polls = await getPolls();
 
-    for (let poll of polls) {
-        const lastPoll = renderPoll(poll);
+    for (let closedPoll of polls) {
+        const lastPoll = renderPoll(closedPoll);
+        lastPoll.classList.add('old-poll');
 
         closedPollsEl.append(lastPoll);
     }

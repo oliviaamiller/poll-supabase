@@ -41,3 +41,14 @@ html, body {
     text-align: center;
     margin: 0;
 }
+
+.old-poll {
+    border: red 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+
+    
+
+
+}
