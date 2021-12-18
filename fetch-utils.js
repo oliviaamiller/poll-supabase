@@ -44,3 +44,15 @@ export async function createPoll(question, optionA, optionB, aVotes, bVotes) {
     console.log(response.data);
     return response.data;
 }
+
+
+
+export async function checkUser() {
+    const user = await client.auth.session();
+
+    if (!user) window.location.replace('../'); 
+    
+    return user.data;
+}
+
+
