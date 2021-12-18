@@ -1,5 +1,7 @@
 import { renderPoll } from '../render-utils.js';
-import { getPolls, createPoll } from '../fetch-utils.js';
+import { getPolls, createPoll, checkUser } from '../fetch-utils.js';
+
+checkUser();
 
 const newPollFormEl = document.querySelector('form');
 const currentPollEl = document.querySelector('#current-poll');
